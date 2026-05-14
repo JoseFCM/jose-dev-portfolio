@@ -1,0 +1,85 @@
+<header class="site-header" [class.scrolled]="isScrolled" [class.menu-open]="isMobileMenuOpen">
+    <nav class="nav-container">
+        <a routerLink="/" class="brand" (click)="closeMobileMenu()">
+            <span class="brand-mark">&lt;JD/&gt;</span>
+            <span class="brand-text">José Dev</span>
+        </a>
+
+        <div class="nav-links">
+            @for (item of navItems; track item.path) {
+            <a [routerLink]="item.path" routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: item.path === '/' }">
+                {{ t().nav[item.labelKey] }}
+            </a>
+            }
+        </div>
+
+        <div class="header-actions">
+            <button type="button" class="icon-action" (click)="toggleTheme()"
+                [attr.aria-label]="theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'">
+                @if (theme === 'dark') {
+                <i class="ri-sun-line"></i>
+                } @else {
+                <i class="ri-moon-line"></i>
+                }
+            </button>
+
+            <button type="button" class="icon-action language-action" (click)="toggleLanguage()" [attr.aria-label]="
+          language() === 'es'
+            ? 'Cambiar idioma'
+            : language() === 'en'
+              ? 'Change language'
+              : 'Alterar idioma'
+        ">
+                <img [src]="
+            language() === 'es'
+              ? 'assets/icons/spain.svg'
+              : language() === 'en'
+                ? 'assets/icons/uk.svg'
+                : 'assets/icons/br.svg'
+          " [alt]="t().common.currentLanguage" />
+            </button>
+
+            <a routerLink="/contact" class="nav-cta">
+                {{ t().nav.cv }}
+            </a>
+
+            <button type="button" class="menu-toggle" (click)="toggleMobileMenu()"
+                [attr.aria-expanded]="isMobileMenuOpen" aria-label="Abrir menú">
+                @if (!isMobileMenuOpen) {
+                <i class="ri-menu-3-line"></i>
+                } @else {
+                <i class="ri-close-line"></i>
+                }
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-backdrop" [class.open]="isMobileMenuOpen" (click)="closeMobileMenu()">
+    </div>
+
+    <aside class="mobile-menu" [class.open]="isMobileMenuOpen">
+        <div class="mobile-menu-header">
+            <span class="brand-mark">&lt;JD/&gt;</span>
+
+            <button type="button" class="menu-close" (click)="closeMobileMenu()" aria-label="Cerrar menú">
+                <i class="ri-close-line"></i>
+            </button>
+        </div>
+
+        <div class="mobile-menu-links">
+            @for (item of navItems; track item.path) {
+            <a [routerLink]="item.path" routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: item.path === '/' }" (click)="closeMobileMenu()">
+                {{ t().nav[item.labelKey] }}
+                <i class="ri-arrow-right-up-line"></i>
+            </a>
+            }
+        </div>
+
+        <a routerLink="/contact" class="mobile-cv" (click)="closeMobileMenu()">
+            {{ t().nav.cv }}
+            <i class="ri-download-line"></i>
+        </a>
+    </aside>
+</header>

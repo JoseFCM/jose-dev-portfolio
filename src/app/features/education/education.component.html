@@ -1,0 +1,219 @@
+<section class="education-page">
+    <div class="education-grid-bg"></div>
+    <div class="education-glow education-glow-one"></div>
+    <div class="education-glow education-glow-two"></div>
+
+    <div class="container">
+        <div class="education-hero">
+            <div class="education-copy">
+                <span class="section-kicker">
+                    {{ t().educationPage.kicker }}
+                </span>
+
+                <h1>
+                    {{ t().educationPage.title }}
+                    <span>{{ t().educationPage.titleHighlight }}</span>
+                </h1>
+
+                <p>
+                    {{ t().educationPage.description }}
+                </p>
+            </div>
+
+            <article class="profile-card glass-card">
+                <div class="profile-photo">
+                    <img src="assets/img/education/profile.png" alt="Foto de José Saavedra" />
+                </div>
+
+                <div class="profile-info">
+                    <span>{{ t().educationPage.profile.role }}</span>
+                    <h2>{{ t().educationPage.profile.name }}</h2>
+                    <p>{{ t().educationPage.profile.stack }}</p>
+                </div>
+
+                <div class="profile-tags">
+                    <span>Angular</span>
+                    <span>AWS</span>
+                    <span>Kotlin</span>
+                </div>
+            </article>
+        </div>
+
+        <div class="education-layout">
+            <section class="education-section glass-card">
+                <div class="section-title">
+                    <span class="title-icon">
+                        <i class="ri-graduation-cap-line"></i>
+                    </span>
+
+                    <div>
+                        <h2>{{ t().educationPage.formal.title }}</h2>
+                        <p>{{ t().educationPage.formal.description }}</p>
+                    </div>
+                </div>
+
+                <div class="education-timeline">
+                    <article class="education-item">
+                        <span class="timeline-dot"></span>
+
+                        <div class="education-year">
+                            {{ t().educationPage.formal.items.systemsEngineering.date }}
+                        </div>
+
+                        <div class="education-content">
+                            <h3>{{ t().educationPage.formal.items.systemsEngineering.title }}</h3>
+                            <strong>{{ t().educationPage.formal.items.systemsEngineering.institution }}</strong>
+                            <p>{{ t().educationPage.formal.items.systemsEngineering.description }}</p>
+
+                            <a href="assets/certificates/unad.pdf" target="_blank" rel="noopener noreferrer">
+                                {{ t().educationPage.formal.support }}
+                                <i class="ri-arrow-right-up-line"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="education-item">
+                        <span class="timeline-dot"></span>
+
+                        <div class="education-year">
+                            {{ t().educationPage.formal.items.softwareTechnology.date }}
+                        </div>
+
+                        <div class="education-content">
+                            <h3>{{ t().educationPage.formal.items.softwareTechnology.title }}</h3>
+                            <strong>{{ t().educationPage.formal.items.softwareTechnology.institution }}</strong>
+                            <p>{{ t().educationPage.formal.items.softwareTechnology.description }}</p>
+
+                            <a href="assets/certificates/sena.pdf" target="_blank" rel="noopener noreferrer">
+                                {{ t().educationPage.formal.certificate }}
+                                <i class="ri-arrow-right-up-line"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="education-item">
+                        <span class="timeline-dot"></span>
+
+                        <div class="education-year">
+                            {{ t().educationPage.formal.items.systemsTechnician.date }}
+                        </div>
+
+                        <div class="education-content">
+                            <h3>{{ t().educationPage.formal.items.systemsTechnician.title }}</h3>
+                            <strong>{{ t().educationPage.formal.items.systemsTechnician.institution }}</strong>
+                            <p>{{ t().educationPage.formal.items.systemsTechnician.description }}</p>
+
+                            <a href="assets/certificates/politecnico.pdf" target="_blank" rel="noopener noreferrer">
+                                {{ t().educationPage.formal.certificate }}
+                                <i class="ri-arrow-right-up-line"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <aside class="learning-card glass-card">
+                <div class="section-title compact">
+                    <span class="title-icon">
+                        <i class="ri-sparkling-line"></i>
+                    </span>
+
+                    <div>
+                        <h2>{{ t().educationPage.focus.title }}</h2>
+                        <p>{{ t().educationPage.focus.description }}</p>
+                    </div>
+                </div>
+
+                <div class="learning-list">
+                    <div>
+                        <i class="ri-layout-4-line"></i>
+                        <span>{{ t().educationPage.focus.frontend }}</span>
+                    </div>
+
+                    <div>
+                        <i class="ri-cloud-line"></i>
+                        <span>{{ t().educationPage.focus.cloud }}</span>
+                    </div>
+
+                    <div>
+                        <i class="ri-database-2-line"></i>
+                        <span>{{ t().educationPage.focus.database }}</span>
+                    </div>
+
+                    <div>
+                        <i class="ri-smartphone-line"></i>
+                        <span>{{ t().educationPage.focus.mobile }}</span>
+                    </div>
+                </div>
+
+                <div class="learning-progress">
+                    <div>
+                        <span>{{ t().educationPage.focus.progressTitle }}</span>
+                        <small>{{ t().educationPage.focus.progressDescription }}</small>
+                    </div>
+
+                    <div class="progress-bar">
+                        <span></span>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <section class="certifications-section">
+            <div class="section-title">
+                <span class="title-icon">
+                    <i class="ri-award-line"></i>
+                </span>
+
+                <div>
+                    <h2>{{ t().educationPage.certifications.title }}</h2>
+                    <p>{{ t().educationPage.certifications.description }}</p>
+                </div>
+            </div>
+
+            <div class="certifications-grid">
+                <article class="certificate-card glass-card">
+                    <span class="certificate-type">
+                        {{ t().educationPage.certifications.items.angular.type }}
+                    </span>
+
+                    <h3>{{ t().educationPage.certifications.items.angular.title }}</h3>
+                    <p>{{ t().educationPage.certifications.items.angular.description }}</p>
+
+                    <a href="assets/certificates/angular.pdf" target="_blank" rel="noopener noreferrer">
+                        {{ t().educationPage.certifications.download }}
+                        <i class="ri-download-line"></i>
+                    </a>
+                </article>
+
+                <article class="certificate-card glass-card">
+                    <span class="certificate-type">
+                        {{ t().educationPage.certifications.items.aws.type }}
+                    </span>
+
+                    <h3>{{ t().educationPage.certifications.items.aws.title }}</h3>
+                    <p>{{ t().educationPage.certifications.items.aws.description }}</p>
+
+                    <a href="assets/certificates/aws.pdf" target="_blank" rel="noopener noreferrer">
+                        {{ t().educationPage.certifications.download }}
+                        <i class="ri-download-line"></i>
+                    </a>
+                </article>
+
+                <article class="certificate-card glass-card">
+                    <span class="certificate-type">
+                        {{ t().educationPage.certifications.items.kotlin.type }}
+                    </span>
+
+                    <h3>{{ t().educationPage.certifications.items.kotlin.title }}</h3>
+                    <p>{{ t().educationPage.certifications.items.kotlin.description }}</p>
+
+                    <a href="assets/certificates/kotlin.pdf" target="_blank" rel="noopener noreferrer">
+                        {{ t().educationPage.certifications.download }}
+                        <i class="ri-download-line"></i>
+                    </a>
+                </article>
+            </div>
+        </section>
+    </div>
+</section>

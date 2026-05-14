@@ -1,0 +1,96 @@
+<section class="lab-page">
+    <div class="container">
+        <div class="lab-hero">
+            <span class="section-kicker">
+                {{ t().labPage.kicker }}
+            </span>
+
+            <h1>
+                {{ t().labPage.title }}
+                <span>{{ t().labPage.titleHighlight }}</span>
+            </h1>
+
+            <p>
+                {{ t().labPage.description }}
+            </p>
+        </div>
+
+        <div class="lab-grid">
+            @for (tool of tools; track tool.id) {
+            <article class="lab-tool glass-card" [class.featured]="tool.id === 'landing-demos'">
+                <div class="tool-header">
+                    <span class="tool-index">{{ tool.number }}</span>
+
+                    <span class="tool-status" [class.active]="tool.status === 'soon'">
+                        {{ getStatusText(tool.status) }}
+                    </span>
+                </div>
+
+                @if (tool.id === 'landing-demos') {
+                <div class="featured-content">
+                    <div>
+                        <div class="tool-icon">
+                            @if (tool.iconClass) {
+                            <i [class]="tool.iconClass"></i>
+                            } @else {
+                            <span>{{ tool.icon }}</span>
+                            }
+                        </div>
+
+                        <h2>{{ getToolText(tool.titleKey) }}</h2>
+
+                        <p>
+                            {{ getToolText(tool.descriptionKey) }}
+                        </p>
+
+                        <div class="tool-tags">
+                            @for (tag of tool.tags; track tag.labelKey) {
+                            <span>{{ getTagText(tag.labelKey) }}</span>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="featured-preview">
+                        <div class="preview-window">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <div class="preview-card">
+                            <strong>{{ t().labPage.preview.title }}</strong>
+                            <small>{{ t().labPage.preview.description }}</small>
+                        </div>
+                    </div>
+                </div>
+                } @else {
+                <div class="tool-icon">
+                    @if (tool.iconClass) {
+                    <i [class]="tool.iconClass"></i>
+                    } @else {
+                    <span>{{ tool.icon }}</span>
+                    }
+                </div>
+
+                <h2>{{ getToolText(tool.titleKey) }}</h2>
+
+                <p>
+                    {{ getToolText(tool.descriptionKey) }}
+                </p>
+
+                <div class="tool-tags">
+                    @for (tag of tool.tags; track tag.labelKey) {
+                    <span>{{ getTagText(tag.labelKey) }}</span>
+                    }
+                </div>
+                }
+
+                <a [routerLink]="tool.link" class="tool-link">
+                    {{ getActionText(tool.id) }}
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </article>
+            }
+        </div>
+    </div>
+</section>

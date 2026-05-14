@@ -1,0 +1,453 @@
+<section class="hero-section">
+    <div class="hero-grid"></div>
+    <div class="hero-glow hero-glow-one"></div>
+    <div class="hero-glow hero-glow-two"></div>
+
+    <div class="container hero-container">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                {{ t().home.hero.badge }}
+            </div>
+
+            <h1>
+                {{ t().home.hero.title }}
+                <span>{{ t().home.hero.titleSecondLine }}</span>
+            </h1>
+
+            <p class="hero-description">
+                {{ t().home.hero.description}}
+            </p>
+
+            <div class="hero-actions">
+                <a routerLink="/projects" class="btn btn-primary">
+                    {{ t().home.hero.primaryCta}}
+                </a>
+
+                <a routerLink="/lab" class="btn btn-secondary">
+                    {{ t().home.hero.secondaryCta}}
+                </a>
+            </div>
+
+            <div class="hero-stack">
+                <span>
+                    <i class="devicon-angularjs-plain colored"></i>
+                    Angular
+                </span>
+
+                <span>
+                    <i class="devicon-typescript-plain colored"></i>
+                    TypeScript
+                </span>
+
+                <span>
+                    <i class="devicon-amazonwebservices-plain-wordmark colored"></i>
+                    AWS
+                </span>
+
+                <span>
+                    <i class="devicon-nodejs-plain colored"></i>
+                    Node.js
+                </span>
+
+                <span>
+                    <i class="devicon-mysql-original colored"></i>
+                    MySQL
+                </span>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="code-card glass-card">
+                <div class="code-header">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <pre><code>
+                    const developer = &#123;
+                    name: 'José',
+                    role: 'Software Developer',
+                    stack: ['Angular', 'TypeScript', 'AWS'],
+                    focus: 'Modern web experiences',
+                    status: 'Building something awesome'
+                    &#125;;
+                </code></pre>
+            </div>
+
+            <div class="floating-card card-one">
+                <strong>+6</strong>
+                <span>{{ t().home.hero.statYearsLabel}}</span>
+            </div>
+
+            <div class="floating-card card-two">
+                <strong>Lab</strong>
+                <span>{{ t().home.hero.labDescription}}</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-section section-spacing" appRevealOnScroll>
+    <div class="container about-container">
+        <div class="section-heading about-heading">
+            <span class="section-kicker">{{ t().home.about.kicker}}</span>
+            <h2>{{t().home.about.title}}</h2>
+        </div>
+
+        <div class="about-grid">
+            <article class="about-card glass-card" appRevealOnScroll>
+                <p>{{t().home.about.descriptionOne}}</p>
+
+                <p>{{t().home.about.descriptionTwo}}</p>
+            </article>
+
+            <div class="stack-card glass-card" appRevealOnScroll>
+                <h3>{{t().home.about.stackTitle}}</h3>
+
+                <div class="stack-groups">
+                    <div class="stack-group">
+                        <div class="stack-group-title">
+                            <i class="devicon-angularjs-plain colored"></i>
+                            <span>Frontend</span>
+                        </div>
+
+                        <div class="stack-list">
+                            <span>Angular</span>
+                            <span>TypeScript</span>
+                            <span>JavaScript</span>
+                            <span>SCSS</span>
+                        </div>
+                    </div>
+
+                    <div class="stack-group">
+                        <div class="stack-group-title">
+                            <i class="devicon-nodejs-plain colored"></i>
+                            <span>Backend</span>
+                        </div>
+
+                        <div class="stack-list">
+                            <span>Node.js</span>
+                            <span>APIs</span>
+                            <span>JWT</span>
+                            <span>{{t().home.about.technologies.microservices}}</span>
+                        </div>
+                    </div>
+
+                    <div class="stack-group">
+                        <div class="stack-group-title">
+                            <i class="devicon-amazonwebservices-plain-wordmark colored"></i>
+                            <span>Cloud & Data</span>
+                        </div>
+
+                        <div class="stack-list">
+                            <span>AWS Lambda</span>
+                            <span>API Gateway</span>
+                            <span>CloudFront</span>
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+
+                    <div class="stack-group">
+                        <div class="stack-group-title">
+                            <i class="devicon-kotlin-plain colored"></i>
+                            <span>Mobile</span>
+                        </div>
+
+                        <div class="stack-list">
+                            <span>Kotlin</span>
+                            <span>Jetpack Compose</span>
+                            <span>Android</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="featured-projects section-spacing" appRevealOnScroll>
+    <div class="container">
+        <div class="projects-header">
+            <div class="section-heading projects-heading">
+                <span class="section-kicker">{{t().home.projects.kicker}}</span>
+                <h2>
+                    {{t().home.projects.title}}
+                    <span>{{t().home.projects.titleHighlight}}</span>
+                </h2>
+                <p>{{t().home.projects.description}}</p>
+            </div>
+
+            <div class="projects-stats glass-card">
+                <article>
+                    <strong>3+</strong>
+                    <span>{{t().home.projects.stats.baseProjects}}</span>
+                </article>
+
+                <article>
+                    <strong>4+</strong>
+                    <span>{{t().home.projects.stats.plannedTools}}</span>
+                </article>
+
+                <article>
+                    <strong>6+</strong>
+                    <span>{{t().home.projects.stats.experienceYears}}</span>
+                </article>
+            </div>
+        </div>
+
+        <div class="projects-grid">
+            @for (project of featuredProjects; track project.id) {
+            <article class="project-card glass-card" appRevealOnScroll>
+                <div class="project-preview">
+                    <img [src]="project.image" [alt]="getProjectText(project.imageAltKey)" />
+
+                    <span class="project-tag">{{ getProjectText(project.tagKey) }}</span>
+
+                    <div class="project-preview-overlay"></div>
+                </div>
+
+                <div class="project-body">
+                    <h3>{{ getProjectText(project.titleKey) }}</h3>
+
+                    <p>
+                        {{ getProjectText(project.descriptionKey) }}
+                    </p>
+
+                    <div class="project-stack">
+                        @for (tech of project.tech; track tech.labelKey) {
+                        <span>
+                            @if (tech.icon) {
+                            <i [class]="tech.icon"></i>
+                            }
+
+                            {{ getTechText(tech.labelKey) }}
+                        </span>
+                        }
+                    </div>
+
+                    <a [routerLink]="project.actionLink" class="project-link">
+                        {{ getProjectText(project.actionLabelKey) }}
+                        <span>→</span>
+                    </a>
+                </div>
+            </article>
+            }
+        </div>
+    </div>
+</section>
+
+<section class="experience-section section-spacing" appRevealOnScroll>
+    <div class="container experience-wrapper">
+        <div class="experience-intro">
+            <span class="section-kicker">
+                {{ t().home.experience.kicker }}
+            </span>
+
+            <h2>
+                {{ t().home.experience.title }}
+            </h2>
+
+            <p>
+                {{ t().home.experience.description }}
+            </p>
+        </div>
+
+        <div class="experience-grid">
+            <article class="experience-timeline glass-card" appRevealOnScroll>
+                <div class="card-title">
+                    <span class="title-icon">▣</span>
+
+                    <h3>
+                        {{ t().home.experience.professional.title }}
+                    </h3>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+
+                        <div class="timeline-date">
+                            {{ t().home.experience.professional.items.current.label }}
+                        </div>
+
+                        <div class="timeline-content">
+                            <h4>
+                                {{ t().home.experience.professional.items.current.role }}
+                            </h4>
+
+                            <strong>
+                                {{ t().home.experience.professional.items.current.company }}
+                            </strong>
+
+                            <p>
+                                {{ t().home.experience.professional.items.current.description }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+
+                        <div class="timeline-date">
+                            {{ t().home.experience.professional.items.enterprise.label }}
+                        </div>
+
+                        <div class="timeline-content">
+                            <h4>
+                                {{ t().home.experience.professional.items.enterprise.role }}
+                            </h4>
+
+                            <strong>
+                                {{ t().home.experience.professional.items.enterprise.company }}
+                            </strong>
+
+                            <p>
+                                {{ t().home.experience.professional.items.enterprise.description }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+
+                        <div class="timeline-date">
+                            {{ t().home.experience.professional.items.personal.label }}
+                        </div>
+
+                        <div class="timeline-content">
+                            <h4>
+                                {{ t().home.experience.professional.items.personal.role }}
+                            </h4>
+
+                            <strong>
+                                {{ t().home.experience.professional.items.personal.company }}
+                            </strong>
+
+                            <p>
+                                {{ t().home.experience.professional.items.personal.description }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <div class="experience-side">
+                <article class="focus-card glass-card" appRevealOnScroll>
+                    <div class="card-title">
+                        <span class="title-icon">✦</span>
+
+                        <h3>
+                            {{ t().home.experience.value.title }}
+                        </h3>
+                    </div>
+
+                    <div class="focus-list">
+                        <div>
+                            <strong>
+                                {{ t().home.experience.value.items.frontend.title }}
+                            </strong>
+
+                            <span>
+                                {{ t().home.experience.value.items.frontend.description }}
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>
+                                {{ t().home.experience.value.items.fullstack.title }}
+                            </strong>
+
+                            <span>
+                                {{ t().home.experience.value.items.fullstack.description }}
+                            </span>
+                        </div>
+
+                        <div>
+                            <strong>
+                                {{ t().home.experience.value.items.product.title }}
+                            </strong>
+
+                            <span>
+                                {{ t().home.experience.value.items.product.description }}
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="experience-highlight glass-card" appRevealOnScroll>
+                    <strong>
+                        {{ t().home.experience.stats.years }}
+                    </strong>
+
+                    <span>
+                        {{ t().home.experience.stats.description }}
+                    </span>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="lab-section section-spacing" appRevealOnScroll>
+    <div class="container lab-container">
+        <div class="lab-panel glass-card">
+            <div class="lab-content">
+                <span class="section-kicker">
+                    {{ t().home.lab.kicker }}
+                </span>
+
+                <h2>
+                    {{ t().home.lab.title }}
+                    <span>{{ t().home.lab.titleHighlight }}</span>
+                </h2>
+
+                <p>
+                    {{ t().home.lab.description }}
+                </p>
+
+                <div class="lab-features">
+                    <div>
+                        <span>⚗</span>
+                        <strong>{{ t().home.lab.features.experimentation.title }}</strong>
+                        <small>{{ t().home.lab.features.experimentation.description }}</small>
+                    </div>
+
+                    <div>
+                        <span>&lt;/&gt;</span>
+                        <strong>{{ t().home.lab.features.cleanCode.title }}</strong>
+                        <small>{{ t().home.lab.features.cleanCode.description }}</small>
+                    </div>
+
+                    <div>
+                        <span>↗</span>
+                        <strong>{{ t().home.lab.features.quickIteration.title }}</strong>
+                        <small>{{ t().home.lab.features.quickIteration.description }}</small>
+                    </div>
+                </div>
+
+                <a routerLink="/lab" class="btn btn-primary">
+                    {{ t().home.lab.cta }}
+                </a>
+            </div>
+
+            <div class="lab-list glass-card">
+                @for (tool of featuredLabTools; track tool.id) {
+                <a [routerLink]="tool.link" class="lab-item">
+                    <span class="lab-number">{{ tool.number }}</span>
+
+                    <div class="lab-icon">{{ tool.icon }}</div>
+
+                    <div>
+                        <strong>{{ getLabToolText(tool.titleKey) }}</strong>
+                        <small>{{ getLabToolText(tool.descriptionKey) }}</small>
+                    </div>
+
+                    <span class="lab-arrow">›</span>
+                </a>
+                }
+            </div>
+        </div>
+    </div>
+</section>

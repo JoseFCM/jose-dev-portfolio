@@ -1,0 +1,115 @@
+<section class="contact-page">
+    <div class="container">
+        <div class="contact-hero">
+            <span class="section-kicker">
+                {{ t().contactPage.kicker }}
+            </span>
+
+            <h1>
+                {{ t().contactPage.title }}
+                <span>{{ t().contactPage.titleHighlight }}</span>
+            </h1>
+
+            <p>
+                {{ t().contactPage.description }}
+            </p>
+        </div>
+
+        <div class="contact-layout">
+            <div class="contact-main">
+                <a href="mailto:jfcaviedes16&#64;gmail.com" class="email-card glass-card">
+                    <div class="email-icon">
+                        <i class="ri-mail-send-line"></i>
+                    </div>
+
+                    <div>
+                        <span>{{ t().contactPage.email.label }}</span>
+                        <strong>{{ t().contactPage.email.address }}</strong>
+                        <small>{{ t().contactPage.email.description }}</small>
+                    </div>
+
+                    <i class="ri-arrow-right-up-line email-arrow"></i>
+                </a>
+
+                <div class="social-grid">
+                    <a href="https://www.linkedin.com/in/jose-caviedes-medina-030a1621a/" target="_blank"
+                        rel="noopener noreferrer" class="social-card glass-card">
+                        <i class="ri-linkedin-box-fill"></i>
+                        <div>
+                            <span>LinkedIn</span>
+                            <small>{{ t().contactPage.social.linkedin }}</small>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/JoseFCM?tab=repositories" target="_blank" rel="noopener noreferrer"
+                        class="social-card glass-card">
+                        <i class="ri-github-fill"></i>
+                        <div>
+                            <span>GitHub</span>
+                            <small>{{ t().contactPage.social.github }}</small>
+                        </div>
+                    </a>
+
+                    <a href="https://www.instagram.com/jofaca98/?hl=es" target="_blank" rel="noopener noreferrer"
+                        class="social-card glass-card">
+                        <i class="ri-instagram-line"></i>
+                        <div>
+                            <span>Instagram</span>
+                            <small>{{ t().contactPage.social.instagram }}</small>
+                        </div>
+                    </a>
+
+                    <a href="https://www.facebook.com/joseC.caviedes" target="_blank" rel="noopener noreferrer"
+                        class="social-card glass-card">
+                        <i class="ri-facebook-circle-fill"></i>
+                        <div>
+                            <span>Facebook</span>
+                            <small>{{ t().contactPage.social.facebook }}</small>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <aside class="contact-card glass-card">
+                <div class="availability">
+                    <span></span>
+                    {{ t().contactPage.availability }}
+                </div>
+
+                <h2>{{ t().contactPage.availableForTitle }}</h2>
+
+                <ul>
+                    <li>
+                        <i class="ri-layout-4-line"></i>
+                        {{ t().contactPage.services.landings }}
+                    </li>
+
+                    <li>
+                        <i class="ri-angularjs-line"></i>
+                        {{ t().contactPage.services.angular }}
+                    </li>
+
+                    <li>
+                        <i class="ri-code-s-slash-line"></i>
+                        {{ t().contactPage.services.prototypes }}
+                    </li>
+
+                    <li>
+                        <i class="ri-tools-line"></i>
+                        {{ t().contactPage.services.tools }}
+                    </li>
+
+                    <li>
+                        <i class="ri-cloud-line"></i>
+                        {{ t().contactPage.services.cloud }}
+                    </li>
+                </ul>
+
+                <div class="contact-note">
+                    <strong>{{ t().contactPage.note.title }}</strong>
+                    <p>{{ t().contactPage.note.description }}</p>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
